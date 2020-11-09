@@ -11,6 +11,7 @@ def file_upload(request):
             files = request.FILES.getlist('file_field')
             d = slot_allot(files)
             slots = []
+            colors = {0:'red', 1:'green', 2:'blue', 3:'yellow', 4:'orange', 5:'violet', 6:'pink'}
             i = 0
             for x in d:
                 j = 0
@@ -18,7 +19,7 @@ def file_upload(request):
                 for xx in x:
                     if(i == 0 and j==3):
                         dd.append('L')
-                    dd.append(chr(ord('A')+xx))
+                    dd.append([chr(ord('A')+xx), colors[xx]])
                     j+=1
                 slots.append(dd)
                 i+=1
