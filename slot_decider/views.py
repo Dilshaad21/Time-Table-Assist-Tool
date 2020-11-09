@@ -9,7 +9,9 @@ def file_upload(request):
         if form.is_valid():
             # handle_uploaded_file(request.FILES['file'])
             files = request.FILES.getlist('file_field')
-            d = slot_allot(files)
+            if(files[1].name=='class.csv'):
+                files[::-1]
+            d = slot_allot(files[1], files[0])
             slots = []
             colors = {0:'red', 1:'green', 2:'blue', 3:'yellow', 4:'orange', 5:'violet', 6:'pink'}
             i = 0
@@ -17,7 +19,7 @@ def file_upload(request):
                 j = 0
                 dd = []
                 for xx in x:
-                    if(i == 0 and j==3):
+                    if(i == 0 and j==4):
                         dd.append('L')
                     dd.append([chr(ord('A')+xx), colors[xx]])
                     j+=1

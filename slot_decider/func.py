@@ -1,6 +1,4 @@
-def slot_allot(li):
-    b = li[0]
-    a = li[1]
+def slot_allot(a,b):
     import pandas as pd
     course=pd.read_csv(a,sep=",")
     dictn=dict()
