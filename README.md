@@ -4,7 +4,7 @@
 * Rahul Anand B18078
 * Mohd Asim Ansari B18177
 * Mohib Qureshi B18070
-* Abhinav Mehta B18099
+* Abhinav Kumar B18099
 
 ## Time Table assistance app version 1
 It is a web based application to automatically generate time table. For version 1 we are taking input from csv files located on the local file system, however in future we are aiming to link it with the database.
