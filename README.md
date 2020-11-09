@@ -7,7 +7,7 @@
 * Abhinav Kumar B18099
 
 ## Time Table assistance app version 1
-It is a web based application to automatically generate time table. Just for version 1, we are taking input from csv files located on the local file system, however in future we are aiming to link it with the database.
+It is a web based application to automatically generate time table. Just for version 1, we are taking input from csv files located on the local file system, however in the final release, we are aiming to link it with the database.
 
 ## Design 
 * Takes two course-slot data and classroom-capacity data files as input from the user.
