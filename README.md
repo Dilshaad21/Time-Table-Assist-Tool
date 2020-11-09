@@ -12,8 +12,8 @@ It is a web based application to automatically generate time table. Just for ver
 ## Design 
 * Takes two course-slot data and classroom-capacity data files as input from the user.
 * Checks if there is any clash.
-* If all constraints are satisfied, then generates time table.
-* If any constraint is violated, shows the error.
+* If all constraints are satisfied, the time table is generated.
+* If any constraint is violated, error message is shown.
 
 ## Requirements
 
