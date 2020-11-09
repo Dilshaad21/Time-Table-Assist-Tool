@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>TIME TABLE</h1>
+    <table border="5" cellspacing="0" align="center">
+        <!--<caption>Timetable</caption>-->
+        <tr>
+            <td align="center" height="50" width="100"><br>
+                <b>Day/Period</b></br>
+            </td>
+            <td align="center" height="50" width="100">
+                <b>I<br>9:00-10:00</b>
+            </td>
+            <td align="center" height="50" width="100">
+                <b>II<br>10:00-11:00</b>
+            </td>
+            <td align="center" height="50" width="100">
+                <b>III<br>11:00-12:00</b>
+            </td>
+            <td align="center" height="50" width="100">
+                <b>12:00-12:40</b>
+            </td>
+            <td align="center" height="50" width="100">
+                <b>IV<br>12:00-1:00</b>
+            </td>
+            <td align="center" height="50" width="100">
+                <b>V<br>1:00-2:00</b>
+            </td>
+            <td align="center" height="50" width="100">
+                <b>VI<br>2:00-3:00</b>
+            </td>
+            <td align="center" height="50" width="100">
+                <b>VII<br>3:00-4:00</b>
+            </td>
+            <td align="center" height="50" width="100">
+                <b>VIII<br>4:00-5:00</b>
+            </td>
+        </tr>
+        <tr>
+
+            <td align="center" height="50">
+                <b>Monday</b></td>
+            {% for slot in slot0 %}
+            {% if forloop.counter == 4 %}
+            <td rowspan="6" align="center" height="50">
+                <h2>L<br>U<br>N<br>C<br>H</h2>
+            </td>
+            {% else %}
+            <td align="center" height="50">{{slot}}</td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <td align="center" height="50">
+                <b>Tuesday</b></td>
+            {% for slot in slot1 %}
+            <td align="center" height="50">{{slot}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td align="center" height="50">
+                <b>Wednesday</b></td>
+            {% for slot in slot2 %}
+            <td align="center" height="50">{{slot}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td align="center" height="50">
+                <b>Thursday</b></td>
+            {% for slot in slot3 %}
+            <td align="center" height="50">{{slot}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td align="center" height="50">
+                <b>Friday</b></td>
+            {% for slot in slot4 %}
+            <td align="center" height="50">{{slot}}</td>
+            {% endfor %}
+        </tr>
+    </table>
+</body>
+
+</html>
