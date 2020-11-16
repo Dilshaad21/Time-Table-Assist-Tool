@@ -1,6 +1,38 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <style>
+        #slots {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #slots td,
+        #slots th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #slots tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #slots tr:hover {
+            background-color: #ddd;
+        }
+
+        #slots th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
 <body>
     <h1 style="text-align: center;">TIME TABLE</h1>
     <table border="5" cellspacing="0" align="center">
@@ -37,48 +69,29 @@
                 <b>VII<br>4:00-5:00</b>
             </td>
         </tr>
-        <tr>
-
-            <td align="center" height="50">
-                <b>Monday</b></td>
-            {% for slot in slot0 %}
-            {% if forloop.counter == 5 %}
-            <td rowspan="6" align="center" height="50">
-                <h2>L<br>U<br>N<br>C<br>H</h2>
-            </td>
-            {% else %}
-            <td align="center" height="50" bgcolor={{slot.1}}>{{slot.0}}</td>
-            {% endif %}
-            {% endfor %}
-        </tr>
+        {% for day, slots in slot_table.items %}
         <tr>
             <td align="center" height="50">
-                <b>Tuesday</b></td>
-            {% for slot in slot1 %}
+                <b>{{day}}</b></td>
+            {% for slot in slots %}
             <td align="center" height="50" bgcolor={{slot.1}}>{{slot.0}}</td>
             {% endfor %}
         </tr>
+        {% endfor %}
+    </table>
+    </br>
+    <h1 style="text-align: center;">SLOT-WISE COURSES</h1>
+    <table id = "slots">
+        {% for key, value in course_table.items %}
         <tr>
-            <td align="center" height="50">
-                <b>Wednesday</b></td>
-            {% for slot in slot2 %}
-            <td align="center" height="50" bgcolor={{slot.1}}>{{slot.0}}</td>
+            <td><b>{{key}}</b></td>
+            {% for x in value %}
+                <td>
+                    {{x}}
+                </td>
             {% endfor %}
         </tr>
-        <tr>
-            <td align="center" height="50">
-                <b>Thursday</b></td>
-            {% for slot in slot3 %}
-            <td align="center" height="50" bgcolor={{slot.1}}>{{slot.0}}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td align="center" height="50">
-                <b>Friday</b></td>
-            {% for slot in slot4 %}
-            <td align="center" height="50" bgcolor={{slot.1}}>{{slot.0}}</td>
-            {% endfor %}
-        </tr>
+        {% endfor %}
     </table>
 </body>
 
