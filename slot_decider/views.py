@@ -51,3 +51,6 @@ def file_upload(request):
 def time_table(request):
     print('worked!')
     return render(request, 'time-table.html')
+
+def home_page(request):
+    return render(request, 'homepage.html')

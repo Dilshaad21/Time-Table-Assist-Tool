@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,34 +6,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload the files</title>
-    <style>
-        input[type=button],
-        input[type=submit],
-        input[type=reset] {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-decoration: none;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'form_css/form.css' %}">
+    <script>
+        $("form").on("change", ".file_field", function(){ 
+         $(this).parent(".file-upload-wrapper").attr("data-text",$(this).val().replace(/.*(\/|\\)/, '') );});
+     </script>
 </head>
 
 <body style="text-align: center;">
-    <h3>Select Files to upload</h3>
+    <div class="container">
     {% if form.is_multipart %}
-    <form enctype="multipart/form-data" method="post" action="/home/upload/">
+    <form enctype="multipart/form-data" method="post" action="/home/upload/" class="form">
         {% csrf_token %}
         {% else %}
-        <form method="post" action="/home/upload/">
+        <form method="post" action="/home/upload/" class="form">
             {% endif %}
-            {{ form }}
+            <h3>Select Files to upload</h3>
+            <label for="file_field">Select class info. file:</label>
+            <div class="file-upload-wrapper" data-text="Select your file!">
+                <input name="file_field" type="file" class="file_field" value="" required>
+            </div>
             <br />
+            <label for="file_field">Select course info. file:</label>
+            <div class="file-upload-wrapper" data-text="Select your file!">
+            <input name="file_field" type="file" class="file_field" value="" required>
+            </div>
             <br />
-            <input type="submit" value="Submit">
+            <label for="file_field">Select instructor info. file:</label>
+            <div class="file-upload-wrapper" data-text="Select your file!">
+            <input name="file_field" type="file" class="file_field" value="" required>
+            </div>
+            <br />
+            <label for="file_field">Select basket info. file:</label>
+            <div class="file-upload-wrapper" data-text="Select your file!">
+            <input name="file_field" type="file" class="file_field" value="" required>
+            </div>
+            <input type="submit">
         </form>
+    </div>
 </body>
 
 </html>
