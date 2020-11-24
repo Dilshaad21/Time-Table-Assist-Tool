@@ -16,14 +16,15 @@ def file_upload(request):
             file_list = []
             for x in files:
                 rd = x.read()
-                s=str(rd,'utf-8')
+                s = str(rd, 'utf-8')
                 data = StringIO(s)
-                df=pd.read_csv(data)
+                df = pd.read_csv(data)
                 print(df)
                 file_list.append(df)
 
             li = slot_allot(file_list[0], file_list[1], file_list[2])
-
+            dic = li[2]
+            # print(dic)
             slots = []  # This list will contain all the slot names that need to be passed to the templates
             colors = {0: 'red', 1: 'green', 2: 'blue', 3: 'yellow',
                       4: 'orange', 5: 'violet', 6: 'pink', 7: 'purple'}  # Color coding for slots
@@ -41,20 +42,30 @@ def file_upload(request):
                 slots.append(dd)
                 i += 1
                 hh += 1
-            print(slots)
+            # print(slots)
             courses_mat = li[1]
             courses = []
             i = 0
             max_course_slot = 0
+            new_course_mat = []
             for x in courses_mat:
-                max_course_slot = max(max_course_slot,len(x))
-            for x in courses_mat:
+                xx = []
+                for y in x:
+                    # print(dic[x])
+                    xx.append([y, dic[y]])
+                new_course_mat.append(xx)
+
+            # print(new_course_mat)
+            for x in new_course_mat:
+                max_course_slot = max(max_course_slot, len(x))
+
+            for x in new_course_mat:
                 rng = max_course_slot - len(x)
                 for y in range(rng):
-                    x.append("-")
+                    x.append(["-", "NA"])
                 courses.append([x, colors[i]])
                 i += 1
-
+            print(courses)
             # Each slot list passed for each day in a week
             course_table = {'Slot A': courses[0], 'Slot B': courses[1], 'Slot C': courses[2],
                             'Slot D': courses[3], 'Slot E': courses[4], 'Slot F': courses[5],
@@ -75,6 +86,7 @@ def file_upload(request):
 def time_table(request):
     print('worked!')
     return render(request, 'time-table.html')
+
 
 def home_page(request):
     return render(request, 'homepage.html')

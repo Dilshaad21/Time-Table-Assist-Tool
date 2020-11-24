@@ -37,11 +37,11 @@ def recur(arr,ind,s_ind,p,n,sem_list,co_list,cse_list,ee_list,me_list,ce_list,co
     return 0
                     
 def slot_allot(f1,f2,f3):
-    import pandas as pd   
-    import numpy as np                      
+    import pandas as pd                     
     df=f2
     df1=f3
     course_fac=dict()
+    cou_stre=dict()
     fac_slot=dict()  #
     n=len(df)
     sem_list=list(df['Semester'])
@@ -53,6 +53,9 @@ def slot_allot(f1,f2,f3):
     for i,j in zip(df1['Course No.'],df1['Instructor']):
         course_fac[i]=j
         fac_slot[j]=[]
+    for i,j in zip(df1['Course No.'],df1['Strength']):
+        cou_stre[i]=j
+    
         
     slot_tmp=[[list() for i in range(4)] for j in range(8)]
     z=[[] for j in range(8)]
@@ -67,4 +70,19 @@ def slot_allot(f1,f2,f3):
         ind+=1
     for i in d: # printing time table
         print(i)
-    return [d,z]
+    df=f1
+    final_df = df.sort_values(by=['Capacity'], ascending=False)
+    final_df=list(final_df['Class'])
+    ditn=dict()
+    for i in z:
+        li=[]
+        for j in i:
+            li.append([cou_stre[j],j])
+        li.sort(reverse=True)
+        co=0
+        for j in li:
+            ditn[j[1]]=final_df[co]
+            co+=1
+            
+        
+    return [d,z,ditn]
