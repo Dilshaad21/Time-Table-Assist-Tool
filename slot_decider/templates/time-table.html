@@ -6,13 +6,14 @@
         #slots {
             font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
-            width: 100%;
+            width: 30%;
+            font-size: large;
         }
 
         #slots td,
         #slots th {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 14px;
         }
 
         #slots tr:nth-child(even) {
@@ -29,6 +30,11 @@
             text-align: left;
             background-color: #4CAF50;
             color: white;
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -81,14 +87,14 @@
     </table>
     </br>
     <h1 style="text-align: center;">SLOT-WISE COURSES</h1>
-    <table id = "slots">
+    <table id="slots" style="text-align: center;" class="center">
         {% for key, value in course_table.items %}
         <tr>
-            <td><b>{{key}}</b></td>
-            {% for x in value %}
-                <td>
-                    {{x}}
-                </td>
+            <td bgcolor={{value.1}}><b>{{key}}</b></td>
+            {% for x in value.0 %}
+            <td bgcolor={{value.1}}>
+                {{x}}
+            </td>
             {% endfor %}
         </tr>
         {% endfor %}
