@@ -1,0 +1,30 @@
+body {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+
+
+.top_msg {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: plum;
+}
+
+.footer_msg {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: plum;
+}
+
+.link_to_upload {
+    align-content: center;
+    padding: 20px;
+    display: inline-block;
+    position: relative;
+    left: 45%;
+    text-decoration: none;
+    background-color: aqua;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: aquamarine; 
+}

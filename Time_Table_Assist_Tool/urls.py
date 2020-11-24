@@ -20,4 +20,5 @@ import slot_decider
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('slot_decider.urls')),
+    path('',slot_decider.views.home_page),
 ]
