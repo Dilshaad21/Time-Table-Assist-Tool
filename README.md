@@ -31,7 +31,7 @@ Go to browser and type the url to run:
 
 There is one file manage.py in the root directory, all other source code is in /slot_decider directory. Project configuration files are in /Time_Table_Assist_Tool directory. Images included in design document are in /Images Folder.
 
-## Want to contribute?
+## Want to contribute? [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Dilshaad21/Time_Table_Assist_Tool/issues)
 
 * [Fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) the repository into your account.
 * Either work according to the given [issues](https://github.com/Dilshaad21/Time_Table_Assist_Tool/issues) or [raise new issue](https://github.com/Dilshaad21/Time_Table_Assist_Tool/issues/new)
