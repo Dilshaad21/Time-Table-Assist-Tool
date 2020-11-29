@@ -29,7 +29,7 @@ Go to browser and type the url to run:
 
 ## File structure
 
-All the source code is in /Time_Table_Assist_Tool directory. Images included in design document are in /Images Folder.
+There is one file manage.py in the root directory, all other source code is in /slot_decider directory. Project configuration files are in /Time_Table_Assist_Tool directory. Images included in design document are in /Images Folder.
 
 ## Want to contribute?
 
