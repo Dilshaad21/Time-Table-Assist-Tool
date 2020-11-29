@@ -1,31 +1,50 @@
 # Time_Table_Assist_Tool
-## Team  Members
+This is a group project of CS308 (Large Application Practicum) course, done under the mentorship of Dr. Siddharth Sarma. It is a web based application to help faculties in making time table automatically.
+
+## Getting Started
+Clone this repo using:
+
+``git clone https://github.com/Dilshaad21/Time_Table_Assist_Tool``
+
+Install python:
+
+``sudo apt-get install python3 ``
+
+Install Django:
+
+``sudo apt install python3-django``
+
+Navigate to Time_Table_Assist_Tool directory:
+
+``cd Time_Table_Assist_Tool``
+
+Start the server using:
+
+``python manage.py runserver``
+
+Go to browser and type the url to run:
+
+``http://localhost:8000/home/upload/``
+
+
+## File structure
+
+All the source code is in /Time_Table_Assist_Tool directory. Images included in design document are in /Images Folder.
+
+## Want to contribute?
+
+* [Fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) the repository into your account.
+* Either work according to the given [issues](https://github.com/Dilshaad21/Time_Table_Assist_Tool/issues) or [raise new issue](https://github.com/Dilshaad21/Time_Table_Assist_Tool/issues/new)
+* Make changes and [commit](https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/committing-and-reviewing-changes-to-your-project) them to user local repository.
+* Make a [pull request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) with the details about the changes.
+* Pull request will be merged once being checked by the moderator.
+
+## Documentation
+Go to : https://github.com/Dilshaad21/Time_Table_Assist_Tool/wiki
+
+## Contributers
 * A.Dilshaad B18041
 * Rahul Anand B18078
 * Mohd Asim Ansari B18177
 * Mohib Qureshi B18070
 * Abhinav Kumar B18099
-
-## Time Table assistance app version 1
-It is a web based application to automatically generate time table. Just for version 1, we are taking input from csv files located on the local file system, however in the final release, we are aiming to link it with the database.
-![Alt text](https://github.com/Dilshaad21/Time_Table_Assist_Tool/blob/master/Screenshot%20from%202020-11-24%2012-18-52.png)
-## Design 
-* Takes two course-slot data and classroom-capacity data files as input from the user.
-* Checks if there is any clash.
-* If all constraints are satisfied, the time table is generated.
-* If any constraint is violated, error message is shown.
-
-## Requirements
-
-* Python3
-* Django setup
-
-## How to run?
-
-* Clone this repo using git clone https://github.com/Dilshaad21/Time_Table_Assist_Tool
-* Navigate to the directory, Time_Table_Assist_Tool
-* Start the server using the command python manage.py runserver 
-* Go to the browser and type http://localhost:8000/home/upload/
-* Click the choose file button to choose course-slot and classroom-capacity data files simultaneaously. Click on choose file button, press ctrl and select both the files in one go. Don't select the files separately. 
-* After the files are selected, Click on submit button.
-* If there is no clash, time table will be shown, otherwise an error message will be displayed.
