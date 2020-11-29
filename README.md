@@ -42,7 +42,7 @@ There is one file manage.py in the root directory, all other source code is in /
 ## Documentation
 Go to : https://github.com/Dilshaad21/Time_Table_Assist_Tool/wiki
 
-## Contributers
+## Contributors
 * A.Dilshaad B18041
 * Rahul Anand B18078
 * Mohd Asim Ansari B18177
